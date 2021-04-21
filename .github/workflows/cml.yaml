@@ -1,9 +1,8 @@
 name: wine-quality-model
-on: [push]
+on: push
 jobs:
   run:
-    runs-on: [ubuntu-latest]
-    container: docker://ubuntu:latest
+    runs-on: [windows-latest]
     steps:
       - uses: actions/setup-node@v1
         with:

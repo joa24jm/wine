@@ -1,0 +1,19 @@
+name: model_wine_quality
+on: [push]
+jobs:
+  run:
+  runs-on: [Windows 10 Education] # I have windows, does this matter?
+  container: docker://dvcorg/cml-py3:latest
+  steps:
+    - uses: actions/checkout@v2
+    - name: cml_run
+    - env:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: 
+        
+        # Your ML workflow goes here
+        pip install -r requirements.txt
+        python train.py
+        
+        echo "model metrics"
+        cat metrics.txt
